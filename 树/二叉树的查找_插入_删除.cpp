@@ -4,3 +4,12 @@
  * 若相等，则查找成功，
  * 若不等，则比较查找查找结点值与当前结点值大小，当给定值小于当前结点值时，在当前结点左子树中查找，否则在右子树中查找
  */
+/**
+ * 递归查找
+ */
+Node* BST_Serach(BSTree T, int k) {
+    if(T == nullptr || k == T->key) return T;
+    if(k < T->key) return BST_Serach(T->left, k);
+    else return BST_Serach(T->right, k);
+}
+
